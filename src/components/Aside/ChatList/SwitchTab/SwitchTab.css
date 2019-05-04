@@ -1,0 +1,28 @@
+.switch-tab {
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+    color: var(--color-text-dark);
+
+}
+
+.switch-tab__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: .5rem;
+    position: relative;
+}
+
+.switch-tab__item {
+    padding: .3rem .3rem;
+    cursor: pointer;
+}
+
+.switch-tab__item:not(:last-child) {
+    margin-right: 1.5rem;
+}
+
+.switch-tab__item--active {
+    border-bottom: 3px solid var(--color-main-dark);
+}

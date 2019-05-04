@@ -1,0 +1,60 @@
+.match {
+    height: 100%;
+    width: 100%;
+    padding: .5rem 0;
+    transition: all .5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.match__list {
+    padding: 1rem;
+}
+
+.match-person {
+    display: flex;
+
+
+}
+
+.match-person:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.match-person__image {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+
+.match-person__name {
+    font-size: 1.6rem;
+    color: var(--color-text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.match-person__recent-msg {
+    font-size: 1.4rem;
+    padding: 1rem;
+    color: var(--color-text-dark);
+}
+
+
+.match-person__status {
+    display: inline-block;
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    background-color: green;
+    margin-left: .8rem;
+
+}
+
+.match-person__right {}

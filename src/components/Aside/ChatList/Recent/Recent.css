@@ -1,0 +1,37 @@
+.recent {
+    height: 100%;
+    width: 100%;
+    padding: .5rem 0;
+    transition: all .5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.recent__list {
+    padding: 1rem;
+}
+
+.recent-person {
+    display: flex;
+    align-items: center;
+}
+
+.recent-person:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.recent-person__image {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+
+.recent-person__recent-msg {
+    font-size: 1.4rem;
+    padding: 1rem;
+    color: var(--color-text-dark);
+}
