@@ -1,0 +1,33 @@
+.profile {
+    padding: 1rem;
+    background-image: linear-gradient(to right bottom, var(--color-main-dark), var(--color-main-light));
+    box-shadow: var(--box-shadow-bottom-light);
+}
+
+.profile__image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+
+}
+
+.profile__figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile__name {
+    font-size: 2rem;
+    color: white;
+
+}
+
+.aside {
+    flex-basis: 20%;
+    height: 100%;
+    border-right: var(--line);
+    box-shadow: var(--box-shadow-right-light);
+}
