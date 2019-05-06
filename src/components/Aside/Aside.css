@@ -30,4 +30,9 @@
     height: 100%;
     border-right: var(--line);
     box-shadow: var(--box-shadow-right-light);
+    max-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
 }

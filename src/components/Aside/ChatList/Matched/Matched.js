@@ -17,6 +17,14 @@ class Matched extends React.Component {
                     <MatchPerson />
                     <MatchPerson />
                     <MatchPerson />
+                    <MatchPerson />
+                    <MatchPerson />
+                    <MatchPerson />
+                    <MatchPerson />
+                    <MatchPerson />
+                    <MatchPerson />
+                    <MatchPerson />
+                    <MatchPerson />
                 </ul>
             </div>
         );
