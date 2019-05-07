@@ -3,7 +3,6 @@ import "./Selected.css";
 
 export default class Selected extends Component {
     render() {
-        console.log(this.props.offset);
         return (
             <div
                 style={{

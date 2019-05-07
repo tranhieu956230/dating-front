@@ -7,8 +7,8 @@ class Chat extends React.Component {
     render() {
         return (
             <section className="chat">
-                <Action />
-                <DashBoard />
+                <Action userInfo={this.props.userInfo} />
+                <DashBoard userInfo={this.props.userInfo} />
             </section>
         );
     }

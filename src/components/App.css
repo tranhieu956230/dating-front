@@ -8,17 +8,18 @@
 }
 
 html {
-    --box-shadow-right-light: 0 .2rem 1.5rem 0 rgba(0, 0, 0, 0.1);
-    --box-shadow-bottom-light: .2rem 0rem 1.5rem 0 rgba(0, 0, 0, 0.1);
+    --box-shadow-right-light: 0 0.2rem 1.5rem 0 rgba(0, 0, 0, 0.1);
+    --box-shadow-bottom-light: 0.2rem 0rem 1.5rem 0 rgba(0, 0, 0, 0.1);
     --line: 1px solid rgba(128, 128, 128, 0.226);
-    --color-main-dark: #FF7F51;
-    --color-main-light: #FFD870;
+    --color-main-dark: #ff7f51;
+    --color-main-light: #ffd870;
 
+    --color-main-dark-trans: #ff7f51a2;
+    --color-main-light-trans: #ffd97094;
     --color-text-dark: rgba(0, 0, 0, 0.85);
 
-    font-family: 'Roberto Slab', sans-serif;
+    font-family: "Roberto Slab", sans-serif;
     font-size: 62.5%;
-
 }
 
 .container {

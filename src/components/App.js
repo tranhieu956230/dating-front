@@ -1,18 +1,24 @@
 import React from "react";
-import Chat from "./Chat/Chat";
-import Aside from "./Aside/Aside";
+import Main from "./Main";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import Login from "./Login/Login";
 import "./App.css";
 
 class App extends React.Component {
     state = {
-        loggedIn: false
+        access_token: ""
     };
 
-    handleLogin = loggedIn => {
-        this.setState({ loggedIn: loggedIn });
+    handleLogin = access_token => {
+        this.setState({ access_token });
+        localStorage.setItem("access_token", access_token);
     };
+
+    componentDidMount = () => {
+        let access_token = localStorage.getItem("access_token");
+        if (access_token) this.setState({ access_token });
+    };
+
     render() {
         return (
             <BrowserRouter>
@@ -23,7 +29,7 @@ class App extends React.Component {
                                 exact
                                 path="/login"
                                 render={() =>
-                                    this.state.loggedIn ? (
+                                    this.state.access_token ? (
                                         <Redirect to="/home" />
                                     ) : (
                                         <Login handleLogin={this.handleLogin} />
@@ -33,11 +39,12 @@ class App extends React.Component {
                             <Route
                                 path="/"
                                 render={() =>
-                                    this.state.loggedIn ? (
-                                        <React.Fragment>
-                                            <Aside />
-                                            <Chat />
-                                        </React.Fragment>
+                                    this.state.access_token ? (
+                                        <Main
+                                            access_token={
+                                                this.state.access_token
+                                            }
+                                        />
                                     ) : (
                                         <Redirect to="/login" />
                                     )

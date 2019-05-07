@@ -1,18 +1,53 @@
-.login-form {
-    padding: 3rem 5rem;
+.login-button {
     border: var(--line);
     box-shadow: 0.5rem 0.5rem 3rem 0 rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50rem;
-    height: 35rem;
+    padding: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: sans-serif;
+    color: white;
+    background-color: #4267b2;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: move-from-top 1s ease-out;
+}
+
+.login-button i {
+    font-size: 3.2rem;
+    color: white;
+    margin-right: 1.8rem;
+}
+
+@keyframes move-from-top {
+    0% {
+        transform: translateX(-50%) translateY(-50rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 1;
+    }
 }
 
 .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     height: 100%;
     width: 100%;
+    background-image: linear-gradient(
+            to bottom right,
+            var(--color-main-dark-trans),
+            var(--color-main-light-trans)
+        ),
+        url("../../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }

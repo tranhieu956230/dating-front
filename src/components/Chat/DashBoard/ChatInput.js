@@ -1,6 +1,7 @@
 import React from "react";
 import EmojiPicker from "emoji-picker-react";
 import ContentEditable from "react-contenteditable";
+import { sendMsg } from "../../../api/socket";
 
 class ChatInput extends React.Component {
     state = {
@@ -9,6 +10,20 @@ class ChatInput extends React.Component {
     };
     handleSubmit = e => {
         e.preventDefault();
+    };
+
+    handleKeyDown = e => {
+        if (e.keyCode == 13) {
+            let userInfo = this.props.userInfo;
+            e.stopPropagation();
+            sendMsg({
+                msg: this.state.html,
+                profile_picture: userInfo.profile_picture,
+                name: userInfo.name,
+                _id: userInfo._id
+            });
+            this.setState({ html: "" });
+        }
     };
 
     handleEmojiChange = (code, object) => {
@@ -20,11 +35,14 @@ class ChatInput extends React.Component {
     handleClick = () => {
         if (!this.state.displayEmoji) {
             this.setState({ displayEmoji: true });
+        } else {
+            this.setState({ displayEmoji: false });
         }
     };
 
     handleChange = e => {
-        this.setState({ html: e.target.value });
+        if (e.target.value.indexOf("<br>") < 0)
+            this.setState({ html: e.target.value });
     };
 
     render() {
@@ -42,6 +60,7 @@ class ChatInput extends React.Component {
                         innerRef={this.contentEditable}
                         html={this.state.html} // innerHTML of the editable div
                         disabled={false} // use true to disable editing
+                        onKeyDown={this.handleKeyDown}
                         onChange={this.handleChange} // handle innerHTML change
                         tagName="article"
                         className="chat-input"
